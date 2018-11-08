@@ -1,0 +1,58 @@
+# Project: Project1
+# Makefile created by Dev-C++ 5.10
+
+CPP      = g++.exe
+CC       = g++.exe
+WINDRES  = windres.exe
+OBJ      = All_graph.o Control.o gereral_Data_variable.o Get_input.o Get_mouse.o init.o main.o Make_cartoon.o state_trans.o Thread.o Cartoon.o
+LINKOBJ  = All_graph.o Control.o gereral_Data_variable.o Get_input.o Get_mouse.o init.o main.o Make_cartoon.o state_trans.o Thread.o Cartoon.o
+LIBS     = -L"D:/MyDrivers/Dev-Cpp/MinGW64/lib32" -L"D:/MyDrivers/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -lgraphics -lgdi32 -limm32 -lmsimg32 -lole32 -loleaut32 -lwinmm -luuid -m32
+INCS     = -I"D:/MyDrivers/Dev-Cpp/MinGW64/include" -I"D:/MyDrivers/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/MyDrivers/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include"
+CXXINCS  = -I"D:/MyDrivers/Dev-Cpp/MinGW64/include" -I"D:/MyDrivers/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/MyDrivers/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"D:/MyDrivers/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++"
+BIN      = Project1.exe
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+All_graph.o: All_graph.cpp
+	$(CC) -c All_graph.cpp -o All_graph.o $(CFLAGS)
+
+Control.o: Control.cpp
+	$(CC) -c Control.cpp -o Control.o $(CFLAGS)
+
+gereral_Data_variable.o: gereral_Data_variable.cpp
+	$(CC) -c gereral_Data_variable.cpp -o gereral_Data_variable.o $(CFLAGS)
+
+Get_input.o: Get_input.cpp
+	$(CC) -c Get_input.cpp -o Get_input.o $(CFLAGS)
+
+Get_mouse.o: Get_mouse.cpp
+	$(CC) -c Get_mouse.cpp -o Get_mouse.o $(CFLAGS)
+
+init.o: init.cpp
+	$(CC) -c init.cpp -o init.o $(CFLAGS)
+
+main.o: main.cpp
+	$(CC) -c main.cpp -o main.o $(CFLAGS)
+
+Make_cartoon.o: Make_cartoon.cpp
+	$(CC) -c Make_cartoon.cpp -o Make_cartoon.o $(CFLAGS)
+
+state_trans.o: state_trans.cpp
+	$(CC) -c state_trans.cpp -o state_trans.o $(CFLAGS)
+
+Thread.o: Thread.cpp
+	$(CC) -c Thread.cpp -o Thread.o $(CFLAGS)
+
+Cartoon.o: Cartoon.cpp
+	$(CC) -c Cartoon.cpp -o Cartoon.o $(CFLAGS)
